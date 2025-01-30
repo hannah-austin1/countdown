@@ -35,6 +35,16 @@
         width: 90%;
         align-items: center;
       }
+
+      @media (max-width: 768px) {
+        .countdown-container {
+          flex-direction: column; /* Stack them vertically */
+        }
+        .countdown-iframe,
+        .countdown-image {
+          width: 100%; /* Make both full width */
+        }
+      }
       .flipdown {
         overflow: hidden !important;
       }
@@ -48,7 +58,7 @@
       }
       .logo {
         background-color: #ffffff;
-        border-radius: 3px;
+        border-radius: 8px;
         padding: 5px;
         width: 15%;
       }
@@ -222,11 +232,11 @@
                 .text { color: #000096; font-size: 24px; font-weight: bold; font-family: 'Roboto', sans-serif; }
                 .flipdown.flipdown__theme-dark .rotor-group-heading:before { color: #000096; }
                 .days-before::before, .hours-before::before, .minutes-before::before, .seconds-before::before {
+                    display: inline-block !important;
                     content: attr(data-before);
                     font-size: 1.9vw;
-                    font-weight: 400;
+                    font-weight: 400
                     color: #000096 !important;
-                    overflow: hidden;
                 }
                 .flipdown.flipdown__theme-dark .rotor,
                 .flipdown.flipdown__theme-dark .rotor-top,
@@ -304,6 +314,7 @@
             <li>Dominik Murar</li>
             <li>Cristian Oparlescu</li>
             <li>Adela Lidia Mot</li>
+            <li>Iacob Sas</li>
             <li>Andrae Mckenzie</li>
           </ul>
         </li>
@@ -333,9 +344,8 @@
           <ul class="team-members">
             <li>Beng Tan</li>
             <li>Darshan Venkatesh</li>
-            <li>Johan Gregersen</li>
+            <li>Maya Bhardwaj</li>
             <li>Josh Barrows</li>
-            <li>Marta Albergaria</li>
             <li>Lewis Dolan</li>
           </ul>
         </li>
