@@ -26,6 +26,28 @@
             background-color: #000096
             padding: 10px;
         }
+             /* Button Styling */
+        .toggle-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #000096;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .toggle-button:hover {
+            background-color: #004080;
+        }
+        /* Hidden Image Styling */
+        .shrek-image {
+            display: none;  /* Shrek is hidden by default */
+            margin-top: 10px;
+            max-width: 100%;
+            height: auto;
+        }
     </style>
 </head>
 <body>
@@ -96,7 +118,8 @@
     </div>
 
 
-     <button class="toggle-button" onclick="toggleShrek()">Show Shrek</button>
+ <!-- Button to Toggle Shrek Image -->
+    <button class="toggle-button" onclick="toggleShrek()">Show Shrek</button>
 
     <!-- Hidden Shrek Image -->
     <div>
@@ -104,6 +127,11 @@
     </div>
 
     <script>
+        // Ensure Shrek starts hidden
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("shrekImg").style.display = "none";
+        });
+
         function toggleShrek() {
             var img = document.getElementById("shrekImg");
             var button = document.querySelector(".toggle-button");
