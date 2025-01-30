@@ -94,6 +94,28 @@
        <img src="https://i.imgur.com/pmaqqQGl.jpg" style="height: 600px; width: 100%">
     </div>
 
+
+     <button class="toggle-button" onclick="toggleShrek()">Show Shrek</button>
+
+    <!-- Hidden Shrek Image -->
+    <div>
+        <img id="shrekImg" class="shrek-image" src="https://pngimg.com/uploads/shrek/shrek_PNG16.png" alt="Shrek">
+    </div>
+
+    <script>
+        function toggleShrek() {
+            var img = document.getElementById("shrekImg");
+            var button = document.querySelector(".toggle-button");
+            if (img.style.display === "none" || img.style.display === "") {
+                img.style.display = "block";
+                button.textContent = "Hide Shrek";
+            } else {
+                img.style.display = "none";
+                button.textContent = "Show Shrek";
+            }
+        }
+    </script>
+
 </body>
 </html>
 
