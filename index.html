@@ -14,7 +14,6 @@
         body {
             text-align: center;
             font-family: 'Roboto', sans-serif;
-            background-color: #f5f5f5;
         }
         h1, h2 {
             color: #ffffff;
@@ -24,35 +23,8 @@
             margin-top: 20px;
         }
         .header {
-            background-color: #000096;
-            padding: 15px;
-            border-radius: 8px;
-        }
-        /* Button Styling */
-        .toggle-button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 16px;
-            color: white;
-            background-color: #000096;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .toggle-button:hover {
-            background-color: #004080;
-        }
-        /* Hidden Image Styling */
-        .shrek-image {
-            display: none; /* Shrek is hidden by default */
-            margin-top: 10px;
-            max-width: 100%;
-            height: auto;
-        }
-        /* Ensure spacing for visibility */
-        .content {
-            padding: 20px;
+            background-color: #000096
+            padding: 10px;
         }
     </style>
 </head>
@@ -62,25 +34,73 @@
     <div class="header">
         <h1>New Customers UK eMSP Go Live</h1>
         <h2>4th February 2024 - 9am UK</h2>
+     </div>
+    <!-- Countdown Timer -->
+    <div class="countdown-container">
+        <iframe srcdoc="
+        <head>
+            <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+            <title>Countdown Clock</title>
+            <link href='https://web.logwork.com/cores/229/tpl/main/widget/countdown/css/flip.css' id='stylesheet' rel='stylesheet'>
+            <link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap' rel='stylesheet'>
+            <style>
+                body { font-family: 'Roboto', sans-serif; padding: 0; margin: 0; text-align: center; }
+                .text { color: #000096; font-size: 24px; font-weight: bold; font-family: 'Roboto', sans-serif; }
+                .flipdown.flipdown__theme-dark .rotor-group-heading:before { color: #000096; }
+                .days-before::before, .hours-before::before, .minutes-before::before, .seconds-before::before {
+                    content: attr(data-before);
+                    font-size: 1.9vw;
+                    font-weight: 400;
+                    color: #000096 !important;
+                }
+                .flipdown.flipdown__theme-dark .rotor,
+                .flipdown.flipdown__theme-dark .rotor-top,
+                .flipdown.flipdown__theme-dark .rotor-leaf-front,
+                .flipdown.flipdown__theme-dark .rotor-bottom,
+                .flipdown.flipdown__theme-dark .rotor-leaf-rear {
+                    color: #99ff0a;
+                    background-color: #000096;
+                }
+                .light-theme { color: #99ff0a; }
+            </style>
+            <script src='https://web.logwork.com/cores/229/tpl/main/widget/countdown/js/flipdown.js'></script>
+        </head>
+        <body>
+            <div id='js_countdown' style='height:26vw;'>
+                <div id='countdown'>
+                    <div id='flipdown' class='flipdown'></div>
+                </div>
+            </div>
+            <input type='hidden' id='js_style' value='flip' />
+            <input type='hidden' id='js_language' value='en' />
+            <input type='hidden' id='js_date' value='1738659600' />
+            <input type='hidden' id='js_tz' value='Europe/London' />
+            <input type='hidden' id='js_uid' value='1' />
+            <script type='text/javascript'>
+                function downloadJSAtOnload(){
+                    var element = document.createElement('script');
+                    element.src = 'https://web.logwork.com/cores/229/tpl/main/widget/countdown/js/js.js';
+                    document.body.appendChild(element);
+                }
+                if (window.addEventListener) window.addEventListener('load', downloadJSAtOnload, false);
+                else if (window.attachEvent) window.attachEvent('onload', downloadJSAtOnload);
+                else window.onload = downloadJSAtOnload;
+            </script>
+        </body>" 
+        title="Countdown timer" style="border: transparent; width: 100%;"></iframe>
     </div>
 
-    <div class="content">
-        <!-- Countdown Timer -->
-        <div class="countdown-container">
-            <iframe 
-                src="https://logwork.com/countdown-i9hh" 
-                class="countdown-timer"
-                style="border: none; width: 100%; height: 100%;">
-            </iframe>
-        </div>
+    <!-- Embedded Image from Imgur -->
+    <div style="text-align: center; margin-top: 2px;">
+       <img src="https://i.imgur.com/pmaqqQGl.jpg" style="height: 600px; width: 100% height: 100%">
+    </div>
 
-        <!-- Button to Toggle Shrek Image -->
-        <button class="toggle-button" onclick="toggleShrek()">Show Shrek</button>
 
-        <!-- Hidden Shrek Image -->
-        <div>
-            <img id="shrekImg" class="shrek-image" src="https://pngimg.com/uploads/shrek/shrek_PNG16.png" alt="Shrek">
-        </div>
+     <button class="toggle-button" onclick="toggleShrek()">Show Shrek</button>
+
+    <!-- Hidden Shrek Image -->
+    <div>
+        <img id="shrekImg" class="shrek-image" src="https://pngimg.com/uploads/shrek/shrek_PNG16.png" alt="Shrek">
     </div>
 
     <script>
@@ -88,4 +108,14 @@
             var img = document.getElementById("shrekImg");
             var button = document.querySelector(".toggle-button");
             if (img.style.display === "none" || img.style.display === "") {
-             
+                img.style.display = "block";
+                button.textContent = "Hide Shrek";
+            } else {
+                img.style.display = "none";
+                button.textContent = "Show Shrek";
+            }
+        }
+    </script>
+
+</body>
+</html>
