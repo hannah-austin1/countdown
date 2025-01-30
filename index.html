@@ -13,6 +13,11 @@
     />
 
     <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
       /* Apply Roboto font and center text */
       body {
         text-align: center;
@@ -24,12 +29,28 @@
         font-family: "Roboto", sans-serif;
       }
       .countdown-container {
-        margin-top: 20px;
         overflow: hidden;
+        display: flex;
+        justify-content: center;
+        width: 90%;
+        align-items: center;
+      }
+      .flipdown {
+        overflow: hidden !important;
       }
       .header {
         background-color: #000096;
-        padding: 10px;
+        padding: 30px 20px;
+        display: flex;
+        width: 100vw;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .logo {
+        background-color: #ffffff;
+        border-radius: 3px;
+        padding: 5px;
+        width: 15%;
       }
       /* Button Styling */
       .toggle-button {
@@ -49,22 +70,147 @@
       .toggle-button:hover {
         background-color: #004080;
       }
-      /* Hidden Image Styling */
+      /* Shrek Fullscreen Overlay */
+      .shrek-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 2000;
+        justify-content: center;
+        align-items: center;
+      }
+
       .shrek-image {
-        display: none; /* Shrek is hidden by default */
+        max-width: 50%;
+        max-height: 80%;
+        animation: fadeIn 0.5s ease-in-out;
+      }
+
+      /* Close Button */
+      .close-button {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 24px;
+        color: white;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 2001;
+      }
+
+      .close-button:hover {
+        color: red;
+      }
+
+      /* Fade-in animation */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: scale(0.9);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      .team-members {
+        list-style-type: disc;
+        text-align: left;
         margin-top: 10px;
-        max-width: 100%;
-        height: auto;
-        z-index: 1000;
+        font-size: 16px;
+        color: #fff;
+      }
+
+      /* Team Container */
+      .dev-teams {
+        padding: 20px;
+        background-color: #000096;
+        color: white;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* Team List Layout */
+      .dev-list {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap; /* Ensures wrapping for smaller screens */
+        gap: 20px;
+        padding: 0;
+        list-style: none;
+        border-radius: 8px;
+      }
+
+      /* Individual Team Boxes */
+      .dev-list li {
+        font-size: 18px;
+        background-color: white;
+        color: #000096;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 200px;
+        text-align: center;
+        max-width: 400px;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      /* Team Name Styling */
+      .team-name {
+        background-color: #99ff0a; /* Dark blue background */
+        color: white; /* White text */
+        width: 100%;
+        padding: 10px;
+        font-weight: bold;
+        font-size: 20px;
+      }
+
+      /* Team Members List */
+      .team-members {
+        list-style-type: none; /* Remove bullet points */
+        padding: 10px 0;
+        width: 100%;
+        padding: 10px;
+        margin: 0;
+        text-align: center;
+      }
+
+      /* Member Names with Dividers */
+      .team-members li {
+        font-size: 16px;
+        color: #000096;
+        padding: 8px 0;
+        border-bottom: 1px solid #000096;
+        border-radius: 0px;
+      }
+
+      /* Remove Divider from Last Member */
+      .team-members li:last-child {
+        border-bottom: none;
       }
     </style>
   </head>
+  <!-- Header Text -->
+  <header class="header">
+    <img
+      class="logo"
+      src="https://www.bppulse.co.uk/menu-logo.png?w=384&fm=webp"
+      alt="pulse logo"
+    />
+    <h1>New Customers UK eMSP Go Live</h1>
+    <h2>4th February 2024 - 9am UK</h2>
+  </header>
   <body>
-    <!-- Header Text -->
-    <div class="header">
-      <h1>New Customers UK eMSP Go Live</h1>
-      <h2>4th February 2024 - 9am UK</h2>
-    </div>
     <!-- Countdown Timer -->
     <div class="countdown-container">
       <iframe
@@ -75,7 +221,7 @@
             <link href='https://web.logwork.com/cores/229/tpl/main/widget/countdown/css/flip.css' id='stylesheet' rel='stylesheet'>
             <link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap' rel='stylesheet'>
             <style>
-                body { font-family: 'Roboto', sans-serif; padding: 0; margin: 0; text-align: center; }
+                body { font-family: 'Roboto', sans-serif; padding: 0; margin: 0; text-align: center; overflow: hidden; margin-top: 80px; }
                 .text { color: #000096; font-size: 24px; font-weight: bold; font-family: 'Roboto', sans-serif; }
                 .flipdown.flipdown__theme-dark .rotor-group-heading:before { color: #000096; }
                 .days-before::before, .hours-before::before, .minutes-before::before, .seconds-before::before {
@@ -127,11 +273,92 @@
           overflow: hidden;
         "
       ></iframe>
+
+      <!-- Embedded Image from Imgur -->
+      <div>
+        <img src="https://i.imgur.com/pmaqqQGl.jpg" style="width: 100%" />
+      </div>
     </div>
 
-    <!-- Embedded Image from Imgur -->
-    <div style="text-align: center">
-      <img src="https://i.imgur.com/pmaqqQGl.jpg" style="width: 100%" />
+    <!-- Development Teams Section -->
+    <div class="dev-teams">
+      <h3 style="padding: 20px">Thank You Everyone 🎉</h3>
+      <ul class="dev-list">
+        <li>
+          <div class="team-name">💵 Squad Midas</div>
+          <ul class="team-members">
+            <li>Hannah Austin</li>
+            <li>Nick Casadei</li>
+            <li>Razvan Bilan</li>
+            <li>Anna Sandru</li>
+            <li>Mihai Comanoiu</li>
+            <li>Aleksandras Gaidamauskas</li>
+            <li>Dan Patrasoiu</li>
+          </ul>
+        </li>
+        <li>
+          <div class="team-name">🔥 Squad Hades</div>
+          <ul class="team-members">
+            <li>Daniel Rosa</li>
+            <li>Dominik Murar</li>
+            <li>Cristian Oparlescu</li>
+            <li>Adela Lidia Mot</li>
+            <li>Andrae Mckenzie</li>
+          </ul>
+        </li>
+        <li>
+          <div class="team-name">🗡️ Squad Nemesis</div>
+          <ul class="team-members">
+            <li>Eleanor Barron</li>
+            <li>Dragos Podaru</li>
+            <li>Vineela Thejaswi</li>
+            <li>Denis Chisalita</li>
+            <li>Pinki Singh</li>
+          </ul>
+        </li>
+        <li>
+          <div class="team-name">💤 Squad Morpheus</div>
+          <ul class="team-members">
+            <li>Petra Florkova</li>
+            <li>Gabriela Zamescu</li>
+            <li>Lopa Joshi</li>
+            <li>Achraff Boucetta</li>
+            <li>Damian Beles</li>
+            <li>Ekaterina Boydeva</li>
+          </ul>
+        </li>
+        <li>
+          <div class="team-name">🧠 Solution Hub</div>
+          <ul class="team-members">
+            <li>Beng Tan</li>
+            <li>Darshan Venkatesh</li>
+            <li>Johan Gregersen</li>
+            <li>Josh Barrows</li>
+            <li>Marta Albergaria</li>
+            <li>Lewis Dolan</li>
+          </ul>
+        </li>
+        <li>
+          <div class="team-name">📱 Product Team</div>
+          <ul class="team-members">
+            <li>Jessica Head</li>
+            <li>Bouchra El Gziri</li>
+            <li>Jessica Barnes</li>
+          </ul>
+        </li>
+        <li>
+          <div class="team-name">🧱 Platform Team</div>
+          <ul class="team-members">
+            <li>Joe Priest</li>
+            <li>Octavian Sirbu</li>
+            <li>Gary Grant</li>
+            <li>Nikolina Radošević</li>
+            <li>Aamir Saeed</li>
+            <li>Aelina Cherian</li>
+            <li>Andrae Ristea</li>
+          </ul>
+        </li>
+      </ul>
     </div>
 
     <!-- Button to Toggle Shrek Image -->
@@ -139,10 +366,10 @@
       Click if you dare!!
     </button>
 
-    <!-- Hidden Shrek Image -->
-    <div>
+    <!-- Shrek Fullscreen Overlay -->
+    <div id="shrekOverlay" class="shrek-overlay">
+      <button class="close-button" onclick="toggleShrek()">✖</button>
       <img
-        id="shrekImg"
         class="shrek-image"
         src="https://pngimg.com/uploads/shrek/shrek_PNG16.png"
         alt="Shrek"
@@ -150,20 +377,12 @@
     </div>
 
     <script>
-      // Ensure Shrek starts hidden
-      document.addEventListener("DOMContentLoaded", function () {
-        document.getElementById("shrekImg").style.display = "none";
-      });
-
       function toggleShrek() {
-        var img = document.getElementById("shrekImg");
-        var button = document.querySelector(".toggle-button");
-        if (img.style.display === "none" || img.style.display === "") {
-          img.style.display = "block";
-          button.textContent = "Hide Shrek";
+        var overlay = document.getElementById("shrekOverlay");
+        if (overlay.style.display === "none" || overlay.style.display === "") {
+          overlay.style.display = "flex";
         } else {
-          img.style.display = "none";
-          button.textContent = "Click if you dare!!";
+          overlay.style.display = "none";
         }
       }
     </script>
