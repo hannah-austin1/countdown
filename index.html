@@ -54,21 +54,18 @@
       }
       /* Button Styling */
       .toggle-button {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        padding: 12px 18px;
-        font-size: 10px;
-        color: white;
-        background-color: #000096;
-        border: none;
-        border-radius: 5px;
         cursor: pointer;
         transition: 0.3s;
-        z-index: 1000;
+        background-color: transparent;
+        border: none;
+        font-size: 16px;
+        color: #000096;
+        padding: 5px;
       }
       .toggle-button:hover {
-        background-color: #004080;
+        background-color: green;
+        padding: 5px;
+        border-radius: 8px;
       }
       /* Shrek Fullscreen Overlay */
       .shrek-overlay {
@@ -287,7 +284,11 @@
         <li>
           <div class="team-name">💵 Squad Midas</div>
           <ul class="team-members">
-            <li>Hannah Austin</li>
+            <li>
+              <button class="toggle-button" onclick="toggleShrek()">
+                Hannah Austin
+              </button>
+            </li>
             <li>Nick Casadei</li>
             <li>Razvan Bilan</li>
             <li>Anna Sandru</li>
@@ -360,11 +361,6 @@
         </li>
       </ul>
     </div>
-
-    <!-- Button to Toggle Shrek Image -->
-    <button class="toggle-button" onclick="toggleShrek()">
-      Click if you dare!!
-    </button>
 
     <!-- Shrek Fullscreen Overlay -->
     <div id="shrekOverlay" class="shrek-overlay">
