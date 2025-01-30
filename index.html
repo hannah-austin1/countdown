@@ -5,12 +5,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Countdown</title>
     <script src="https://res.cdn.office.net/teams-js/2.0.0/js/MicrosoftTeams.min.js"></script>
+    
+    <!-- Import Roboto Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Apply Roboto font and center text */
+        body {
+            text-align: center;
+            font-family: 'Roboto', sans-serif;
+        }
+        h1, h2 {
+            color: #000096;
+            font-family: 'Roboto', sans-serif;
+        }
+        .countdown-container {
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
+
+    <!-- Header Text -->
     <h1>New Customers UK eMSP Go Live</h1>
     <h2>4th February 2024 - 9am UK</h2>
-<iframe srcdoc="<head><meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /><title>Countdown Clock</title><link href=&quot;https://web.logwork.com/cores/229/tpl/main/widget/countdown/css/flip.css&quot; id=&quot;stylesheet&quot; rel=&quot;stylesheet&quot;><style>body {font-family: sans-serif;padding: 0;margin: 0;}* {margin: 0;padding: 0;}.text{color: #000096;}.flipdown.flipdown__theme-dark .rotor-group-heading:before {color: #000096}.days-before::before,.hours-before::before,.minutes-before::before,.seconds-before::before{content: attr(data-before);font-size: 1.9vw;font-weight: 400;color: #000096 !important;}.flipdown.flipdown__theme-dark .rotor,.flipdown.flipdown__theme-dark .rotor-top,.flipdown.flipdown__theme-dark .rotor-leaf-front,.flipdown.flipdown__theme-dark .rotor-bottom,.flipdown.flipdown__theme-dark .rotor-leaf-rear{color: #99ff0a;background-color: #000096;}.light-theme {color: #99ff0a}</style><style id=&quot;days_style&quot;></style><script src=&quot;https://web.logwork.com/cores/229/tpl/main/widget/countdown/js/flipdown.js&quot;></script></head><body><div id=&quot;js_countdown&quot; style=&quot;height:26vw;&quot;><div id=&quot;countdown&quot;><div class=&quot;text&quot;> New Customers UK eMSP Go Live</div><div id=&quot;flipdown&quot; class=&quot;flipdown&quot;></div></div></div><input type=&quot;hidden&quot; id=&quot;js_style&quot; value=&quot;flip&quot; /><input type=&quot;hidden&quot; id=&quot;js_language&quot; value=&quot;en&quot; /><input type=&quot;hidden&quot; id=&quot;js_date&quot; value=&quot;1738659600&quot; /><input type=&quot;hidden&quot; id=&quot;js_tz&quot; value=&quot;Europe/London&quot; /><input type=&quot;hidden&quot; id=&quot;js_uid&quot; value=&quot;1&quot; /><script type=&quot;text/javascript&quot;>function downloadJSAtOnload(){var element = document.createElement(&quot;script&quot;);element.src = &quot;https://web.logwork.com/cores/229/tpl/main/widget/countdown/js/js.js&quot;;document.body.appendChild(element);}if (window.addEventListener)window.addEventListener(&quot;load&quot;, downloadJSAtOnload, false);else if (window.attachEvent)window.attachEvent(&quot;onload&quot;, downloadJSAtOnload);else window.onload = downloadJSAtOnload;</script></body>" title="Countdown timer" style="border: transparent; width: 100%; height: 415px;"></iframe>    <div style="text-align: center; margin-top: 2px;">
-        <a href="//imgur.com/a/Az7X9md"></a><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+
+    <!-- Countdown Timer -->
+    <div class="countdown-container">
+        <iframe srcdoc="
+        <head>
+            <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+            <title>Countdown Clock</title>
+            <link href='https://web.logwork.com/cores/229/tpl/main/widget/countdown/css/flip.css' id='stylesheet' rel='stylesheet'>
+            <link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap' rel='stylesheet'>
+            <style>
+                body { font-family: 'Roboto', sans-serif; padding: 0; margin: 0; text-align: center; }
+                .text { color: #000096; font-size: 24px; font-weight: bold; font-family: 'Roboto', sans-serif; }
+                .flipdown.flipdown__theme-dark .rotor-group-heading:before { color: #000096; }
+                .days-before::before, .hours-before::before, .minutes-before::before, .seconds-before::before {
+                    content: attr(data-before);
+                    font-size: 1.9vw;
+                    font-weight: 400;
+                    color: #000096 !important;
+                }
+                .flipdown.flipdown__theme-dark .rotor,
+                .flipdown.flipdown__theme-dark .rotor-top,
+                .flipdown.flipdown__theme-dark .rotor-leaf-front,
+                .flipdown.flipdown__theme-dark .rotor-bottom,
+                .flipdown.flipdown__theme-dark .rotor-leaf-rear {
+                    color: #99ff0a;
+                    background-color: #000096;
+                }
+                .light-theme { color: #99ff0a; }
+            </style>
+            <script src='https://web.logwork.com/cores/229/tpl/main/widget/countdown/js/flipdown.js'></script>
+        </head>
+        <body>
+            <div id='js_countdown' style='height:26vw;'>
+                <div id='countdown'>
+                    <div id='flipdown' class='flipdown'></div>
+                </div>
+            </div>
+            <input type='hidden' id='js_style' value='flip' />
+            <input type='hidden' id='js_language' value='en' />
+            <input type='hidden' id='js_date' value='1738659600' />
+            <input type='hidden' id='js_tz' value='Europe/London' />
+            <input type='hidden' id='js_uid' value='1' />
+            <script type='text/javascript'>
+                function downloadJSAtOnload(){
+                    var element = document.createElement('script');
+                    element.src = 'https://web.logwork.com/cores/229/tpl/main/widget/countdown/js/js.js';
+                    document.body.appendChild(element);
+                }
+                if (window.addEventListener) window.addEventListener('load', downloadJSAtOnload, false);
+                else if (window.attachEvent) window.attachEvent('onload', downloadJSAtOnload);
+                else window.onload = downloadJSAtOnload;
+            </script>
+        </body>" 
+        title="Countdown timer" style="border: transparent; width: 100%; height: 415px;"></iframe>
     </div>
+
+    <!-- Embedded Image from Imgur -->
+    <div style="text-align: center; margin-top: 20px;">
+        <img src="https://imgur.com/a/Az7X9md" alt="CV2X Logo" style="max-width: 100%; height: auto;">
+    </div>
+
+    <script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+
 </body>
 </html>
+
