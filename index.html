@@ -24,6 +24,8 @@
         font-family: "Roboto", sans-serif;
         background: url('https://i.imgur.com/jsnaNVJ.png') no-repeat center center fixed;
         background-size: cover;
+        height: 100vh;
+        overflow: hidden;
       }
       h1,
       h2 {
@@ -54,16 +56,54 @@
         overflow: hidden !important;
       }
       .header {
-        background-color: transparent;
-        padding: 10px 40px;
+        background: linear-gradient(90deg, #000096 60%, #000 100%);
+        padding: 8px 40px;
         display: flex;
         width: 100%;
-        justify-content: space-between;
+        justify-content: flex-start;
         align-items: center;
+        gap: 32px;
       }
       .logo {
-        margin-right: 30px;
-        width: 3%;
+        width: 60px;
+        height: 60px;
+        object-fit: contain;
+        padding: 6px;
+        margin-right: 0;
+      }
+      .logo-uber {
+        width: 80px;
+        height: 80px;
+        object-fit: fill;
+        border-radius: 12px;
+        margin-right: 0;
+      }
+      .header-logos {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+      .header-center {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .header-title {
+        color: #99ff0a;
+        font-size: 2.2rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        margin: 0;
+        text-align: center;
+      }
+      .header-date {
+        color: #fff;
+        font-size: 1.2rem;
+        font-weight: 400;
+        margin: 0;
+        text-align: right;
       }
       /* Button Styling */
       .toggle-button {
@@ -140,15 +180,16 @@
       /* Team Container */
       .dev-teams {
         padding: 10px;
-        background-color: #000096;
+        background-color: #99ff0a;
         opacity: 0.8;
-        color: white;
+        color: #000096;
         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
         border-radius: 10px;
         width: 100%;
         margin-left: auto;
         margin-right: auto;
-        margin-top: 50px;
+        margin-top: 20px;
+        margin-bottom: 10px;
       }
 
       /* Team List Layout */
@@ -166,7 +207,7 @@
       .dev-list li {
         font-size: 18px;
         background-color: white;
-        color: #000096;
+        color: #99ff0a;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -179,9 +220,11 @@
 
       /* Team Name Styling */
       .team-name {
-        background-color: #99ff0a; /* Dark blue background */
+        background-color: #000096; /* Dark blue background */
         color: white; /* White text */
         width: 100%;
+        opacity: 1;
+        z-index: 100;
         padding: 10px;
         font-weight: bold;
         font-size: 20px;
@@ -225,17 +268,42 @@
       .shrek-center-button:hover, .shrek-center-button:focus {
         background: #99ff0a;
       }
+
+      .flipdown.flipdown__theme-dark .rotor,
+      .flipdown.flipdown__theme-dark .rotor-top,
+      .flipdown.flipdown__theme-dark .rotor-leaf-front,
+      .flipdown.flipdown__theme-dark .rotor-bottom,
+      .flipdown.flipdown__theme-dark .rotor-leaf-rear {
+        color: #99ff0a !important;
+        background-color: rgba(0,0,150,0.5) !important;
+        border-radius: 18px !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+      }
+
+      .flipdown.flipdown__theme-dark .rotor-group-heading:before {
+        color: white !important;
+        text-shadow: 1px 1px 6px #000, 0 0 2px #000096;
+      }
     </style>
   </head>
   <!-- Header Text -->
   <header class="header">
-    <img
-      class="logo"
-      src="https://www.bppulse.co.uk/spinner.png?w=828&fm=webp"
-      alt="pulse logo"
-    />
-    <h1>Customer Migration/Uber Go Live</h1>
-    <h2>24th June 2025 - 3pm UK</h2>
+    <div class="header-logos">
+      <img
+        class="logo"
+        src="https://www.bppulse.co.uk/spinner.png?w=828&fm=webp"
+        alt="bp pulse logo"
+      />
+      <img
+        class="logo-uber"
+        src="https://mobile-content.uber.com/launch-experience/ride.png"
+        alt="Uber logo"
+      />
+    </div>
+    <div class="header-center">
+      <h1 class="header-title">Customer Migration/Uber Go Live</h1>
+    </div>
+    <h2 class="header-date">24th June 2025 - 3pm UK</h2>
   </header>
   <body>
     <!-- Countdown Timer -->
@@ -256,10 +324,13 @@
                 .flipdown.flipdown__theme-dark .rotor-bottom,
                 .flipdown.flipdown__theme-dark .rotor-leaf-rear {
                     color: #99ff0a !important;
-                    background-color: #000096;
+                    background-color: rgba(0,0,150,0.5) !important;
+                    border-radius: 18px !important;
+                    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
                 }
                 .flipdown.flipdown__theme-dark .rotor-group-heading:before {
                     color: white !important;
+                    text-shadow: 1px 1px 6px #000096, 0 0 2px #99ff0a;
                 }
                 .days-before::before, .hours-before::before, .minutes-before::before, .seconds-before::before {
                     display: inline-block !important;
