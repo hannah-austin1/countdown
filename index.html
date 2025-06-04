@@ -22,6 +22,8 @@
       body {
         text-align: center;
         font-family: "Roboto", sans-serif;
+        background: url('https://i.imgur.com/jsnaNVJ.png') no-repeat center center fixed;
+        background-size: cover;
       }
       h1,
       h2 {
@@ -31,14 +33,17 @@
       .countdown-container {
         overflow: hidden;
         display: flex;
+        flex-direction: column; /* Stack vertically */
         justify-content: center;
-        width: 90%;
         align-items: center;
+        width: 90%;
+        margin: 0 auto;
+        margin-top: -10px;
       }
 
       @media (max-width: 768px) {
         .countdown-container {
-          flex-direction: column; /* Stack them vertically */
+          flex-direction: row; /* Stack them vertically */
         }
         .countdown-iframe,
         .countdown-image {
@@ -49,10 +54,10 @@
         overflow: hidden !important;
       }
       .header {
-        background-color: #000096;
-        padding: 30px 40px;
+        background-color: transparent;
+        padding: 10px 40px;
         display: flex;
-        width: 100vw;
+        width: 100%;
         justify-content: space-between;
         align-items: center;
       }
@@ -134,14 +139,16 @@
 
       /* Team Container */
       .dev-teams {
-        padding: 20px;
+        padding: 10px;
         background-color: #000096;
+        opacity: 0.8;
         color: white;
         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
         border-radius: 10px;
-        width: 90%;
+        width: 100%;
         margin-left: auto;
         margin-right: auto;
+        margin-top: 50px;
       }
 
       /* Team List Layout */
@@ -203,6 +210,21 @@
       .team-members li:last-child {
         border-bottom: none;
       }
+
+      .shrek-center-button {
+        position: absolute;
+        top: 46%;
+        right: 37%;
+        z-index: 100;
+        padding: 0;
+        font-size: 40px;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+      }
+      .shrek-center-button:hover, .shrek-center-button:focus {
+        background: #99ff0a;
+      }
     </style>
   </head>
   <!-- Header Text -->
@@ -212,12 +234,12 @@
       src="https://www.bppulse.co.uk/spinner.png?w=828&fm=webp"
       alt="pulse logo"
     />
-    <h1>New Customers UK eMSP Go Live</h1>
-    <h2>4th February 2025 - 9am UK</h2>
+    <h1>Customer Migration/Uber Go Live</h1>
+    <h2>24th June 2025 - 3pm UK</h2>
   </header>
   <body>
     <!-- Countdown Timer -->
-    <div class="countdown-container">
+    <div class="countdown-container" style="margin-top: 10px;">
       <iframe
         srcdoc="
         <head>
@@ -226,23 +248,25 @@
             <link href='https://web.logwork.com/cores/229/tpl/main/widget/countdown/css/flip.css' id='stylesheet' rel='stylesheet'>
             <link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap' rel='stylesheet'>
             <style>
-                body { font-family: 'Roboto', sans-serif; padding: 0; margin: 0; text-align: center; overflow: hidden; margin-top: 80px; }
-                .text { color: #000096; font-size: 24px; font-weight: bold; font-family: 'Roboto', sans-serif; }
-                .flipdown.flipdown__theme-dark .rotor-group-heading:before { color: #000096; }
+                body { font-family: 'Roboto', sans-serif; padding: 0; margin: 0; text-align: center; overflow: hidden; margin-top: 0px; }
+                .text { color: white; font-size: 24px; font-weight: bold; font-family: 'Roboto', sans-serif; }
+                .flipdown.flipdown__theme-dark .rotor,
+                .flipdown.flipdown__theme-dark .rotor-top,
+                .flipdown.flipdown__theme-dark .rotor-leaf-front,
+                .flipdown.flipdown__theme-dark .rotor-bottom,
+                .flipdown.flipdown__theme-dark .rotor-leaf-rear {
+                    color: #99ff0a !important;
+                    background-color: #000096;
+                }
+                .flipdown.flipdown__theme-dark .rotor-group-heading:before {
+                    color: white !important;
+                }
                 .days-before::before, .hours-before::before, .minutes-before::before, .seconds-before::before {
                     display: inline-block !important;
                     content: attr(data-before);
                     font-size: 1.9vw;
                     font-weight: 400
                     color: #000096 !important;
-                }
-                .flipdown.flipdown__theme-dark .rotor,
-                .flipdown.flipdown__theme-dark .rotor-top,
-                .flipdown.flipdown__theme-dark .rotor-leaf-front,
-                .flipdown.flipdown__theme-dark .rotor-bottom,
-                .flipdown.flipdown__theme-dark .rotor-leaf-rear {
-                    color: #99ff0a;
-                    background-color: #000096;
                 }
                 .light-theme { color: #99ff0a; }
             </style>
@@ -256,7 +280,7 @@
             </div>
             <input type='hidden' id='js_style' value='flip' />
             <input type='hidden' id='js_language' value='en' />
-            <input type='hidden' id='js_date' value='1738659600' />
+            <input type='hidden' id='js_date' value='1750978800' />
             <input type='hidden' id='js_tz' value='Europe/London' />
             <input type='hidden' id='js_uid' value='1' />
             <script type='text/javascript'>
@@ -280,10 +304,15 @@
       ></iframe>
 
       <!-- Embedded Image from Imgur -->
-      <div>
+      <!-- <div>
         <img src="https://i.imgur.com/pmaqqQGl.jpg" style="width: 100%" />
       </div>
-    </div>
+    </div> -->
+    <br />
+
+    <!-- Shrek Button Centered -->
+    <!-- <button class="shrek-center-button" onclick="toggleShrek()" aria-label="Shrek Easter Egg">🧑</button> -->
+    <br />
 
     <!-- Development Teams Section -->
     <div class="dev-teams">
@@ -293,88 +322,40 @@
       </h3>
       <ul class="dev-list">
         <li>
-          <div class="team-name">💵 Squad Midas</div>
-          <ul class="team-members">
-            <li>
-              <button class="toggle-button" onclick="toggleShrek()">
-                Hannah Austin
-              </button>
-            </li>
-            <li>Nick Casadei</li>
-            <li>Razvan Bilan</li>
-            <li>Anna Sandru</li>
-            <li>Mihai Comanoiu</li>
-            <li>Aleksandras Gaidamauskas</li>
-            <li>Dan Patrasoiu</li>
-          </ul>
+          <div class="team-name">🇬🇧 UK Business</div>
         </li>
         <li>
-          <div class="team-name">🔥 Squad Hades</div>
-          <ul class="team-members">
-            <li>Daniel Rosa</li>
-            <li>Dominik Murar</li>
-            <li>Cristian Oparlescu</li>
-            <li>Adela Lidia Mot</li>
-            <li>Iacob Sas</li>
-            <li>Andrae Mckenzie</li>
-          </ul>
+          <div class="team-name">🛠️ P&amp;T</div>
         </li>
         <li>
-          <div class="team-name">🗡️ Squad Nemesis</div>
-          <ul class="team-members">
-            <li>Eleanor Barron</li>
-            <li>Dragos Podaru</li>
-            <li>Vineela Thejaswi</li>
-            <li>Denis Chisalita</li>
-            <li>Pinki Singh</li>
-          </ul>
+          <div class="team-name">👥 Customer Team</div>
         </li>
         <li>
-          <div class="team-name">💤 Squad Morpheus</div>
-          <ul class="team-members">
-            <li>Petra Florkova</li>
-            <li>Gabriela Zamescu</li>
-            <li>Lopa Joshi</li>
-            <li>Achraff Boucetta</li>
-            <li>Damian Beles</li>
-            <li>Ekaterina Boydeva</li>
-          </ul>
+          <div class="team-name">📞 Customer Care</div>
         </li>
         <li>
-          <div class="team-name">🧠 Solution Hub</div>
-          <ul class="team-members">
-            <li>Beng Tan</li>
-            <li>Darshan Venkatesh</li>
-            <li>Maya Bhardwaj</li>
-            <li>Josh Barrows</li>
-            <li>Lewis Dolan</li>
-          </ul>
+          <div class="team-name">💼 Commercial Team</div>
         </li>
         <li>
-          <div class="team-name">📱 Product Team</div>
-          <ul class="team-members">
-            <li>Jessica Head</li>
-            <li>Bouchra El Gziri</li>
-            <li>Jessica Barnes</li>
-          </ul>
+          <div class="team-name">📊 D&amp;A</div>
         </li>
         <li>
-          <div class="team-name">🧱 Platform Team</div>
-          <ul class="team-members">
-            <li>Joe Priest</li>
-            <li>Octavian Sirbu</li>
-            <li>Gary Grant</li>
-            <li>Nikolina Radošević</li>
-            <li>Aamir Saeed</li>
-            <li>Aelina Cherian</li>
-            <li>Andrae Ristea</li>
-          </ul>
+          <div class="team-name">🖥️ Tech Support</div>
+        </li>
+        <li>
+          <div class="team-name">⚖️ Legal &amp; Privacy</div>
+        </li>
+        <li>
+          <div class="team-name">☁️ Salesforce</div>
+        </li>
+        <li>
+          <div class="team-name">📇 CRM</div>
         </li>
       </ul>
     </div>
 
     <!-- Shrek Fullscreen Overlay -->
-    <div id="shrekOverlay" class="shrek-overlay">
+    <!-- <div id="shrekOverlay" class="shrek-overlay">
       <button class="close-button" onclick="toggleShrek()">✖</button>
       <img
         class="shrek-image"
@@ -392,6 +373,6 @@
           overlay.style.display = "none";
         }
       }
-    </script>
+    </script> -->
   </body>
 </html>
