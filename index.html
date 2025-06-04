@@ -22,10 +22,6 @@
       body {
         text-align: center;
         font-family: "Roboto", sans-serif;
-        background: url('https://i.imgur.com/jsnaNVJ.png') no-repeat center center fixed;
-        background-size: cover;
-        height: 100vh;
-        overflow: hidden;
       }
       h1,
       h2 {
@@ -35,17 +31,14 @@
       .countdown-container {
         overflow: hidden;
         display: flex;
-        flex-direction: column; /* Stack vertically */
         justify-content: center;
-        align-items: center;
         width: 90%;
-        margin: 0 auto;
-        margin-top: -10px;
+        align-items: center;
       }
 
       @media (max-width: 768px) {
         .countdown-container {
-          flex-direction: row; /* Stack them vertically */
+          flex-direction: column; /* Stack them vertically */
         }
         .countdown-iframe,
         .countdown-image {
@@ -56,54 +49,16 @@
         overflow: hidden !important;
       }
       .header {
-        background: linear-gradient(90deg, #000096 60%, #000 100%);
-        padding: 8px 40px;
+        background-color: #000096;
+        padding: 30px 40px;
         display: flex;
-        width: 100%;
-        justify-content: flex-start;
+        width: 100vw;
+        justify-content: space-between;
         align-items: center;
-        gap: 32px;
       }
       .logo {
-        width: 60px;
-        height: 60px;
-        object-fit: contain;
-        padding: 6px;
-        margin-right: 0;
-      }
-      .logo-uber {
-        width: 80px;
-        height: 80px;
-        object-fit: fill;
-        border-radius: 12px;
-        margin-right: 0;
-      }
-      .header-logos {
-        display: flex;
-        align-items: center;
-        gap: 16px;
-      }
-      .header-center {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-      }
-      .header-title {
-        color: #99ff0a;
-        font-size: 2.2rem;
-        font-weight: 700;
-        letter-spacing: 1px;
-        margin: 0;
-        text-align: center;
-      }
-      .header-date {
-        color: #fff;
-        font-size: 1.2rem;
-        font-weight: 400;
-        margin: 0;
-        text-align: right;
+        margin-right: 30px;
+        width: 3%;
       }
       /* Button Styling */
       .toggle-button {
@@ -179,17 +134,14 @@
 
       /* Team Container */
       .dev-teams {
-        padding: 10px;
-        background-color: #99ff0a;
-        opacity: 0.8;
-        color: #000096;
+        padding: 20px;
+        background-color: #000096;
+        color: white;
         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
         border-radius: 10px;
-        width: 100%;
+        width: 90%;
         margin-left: auto;
         margin-right: auto;
-        margin-top: 20px;
-        margin-bottom: 10px;
       }
 
       /* Team List Layout */
@@ -207,7 +159,7 @@
       .dev-list li {
         font-size: 18px;
         background-color: white;
-        color: #99ff0a;
+        color: #000096;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -220,11 +172,9 @@
 
       /* Team Name Styling */
       .team-name {
-        background-color: #000096; /* Dark blue background */
+        background-color: #99ff0a; /* Dark blue background */
         color: white; /* White text */
         width: 100%;
-        opacity: 1;
-        z-index: 100;
         padding: 10px;
         font-weight: bold;
         font-size: 20px;
@@ -253,61 +203,21 @@
       .team-members li:last-child {
         border-bottom: none;
       }
-
-      .shrek-center-button {
-        position: absolute;
-        top: 46%;
-        right: 37%;
-        z-index: 100;
-        padding: 0;
-        font-size: 40px;
-        border: none;
-        background-color: transparent;
-        cursor: pointer;
-      }
-      .shrek-center-button:hover, .shrek-center-button:focus {
-        background: #99ff0a;
-      }
-
-      .flipdown.flipdown__theme-dark .rotor,
-      .flipdown.flipdown__theme-dark .rotor-top,
-      .flipdown.flipdown__theme-dark .rotor-leaf-front,
-      .flipdown.flipdown__theme-dark .rotor-bottom,
-      .flipdown.flipdown__theme-dark .rotor-leaf-rear {
-        color: #99ff0a !important;
-        background-color: rgba(0,0,150,0.5) !important;
-        border-radius: 18px !important;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-      }
-
-      .flipdown.flipdown__theme-dark .rotor-group-heading:before {
-        color: white !important;
-        text-shadow: 1px 1px 6px #000, 0 0 2px #000096;
-      }
     </style>
   </head>
   <!-- Header Text -->
   <header class="header">
-    <div class="header-logos">
-      <img
-        class="logo"
-        src="https://www.bppulse.co.uk/spinner.png?w=828&fm=webp"
-        alt="bp pulse logo"
-      />
-      <img
-        class="logo-uber"
-        src="https://mobile-content.uber.com/launch-experience/ride.png"
-        alt="Uber logo"
-      />
-    </div>
-    <div class="header-center">
-      <h1 class="header-title">Customer Migration/Uber Go Live</h1>
-    </div>
-    <h2 class="header-date">24th June 2025 - 3pm UK</h2>
+    <img
+      class="logo"
+      src="https://www.bppulse.co.uk/spinner.png?w=828&fm=webp"
+      alt="pulse logo"
+    />
+    <h1>New Customers UK eMSP Go Live</h1>
+    <h2>4th February 2025 - 9am UK</h2>
   </header>
   <body>
     <!-- Countdown Timer -->
-    <div class="countdown-container" style="margin-top: 10px;">
+    <div class="countdown-container">
       <iframe
         srcdoc="
         <head>
@@ -316,28 +226,23 @@
             <link href='https://web.logwork.com/cores/229/tpl/main/widget/countdown/css/flip.css' id='stylesheet' rel='stylesheet'>
             <link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap' rel='stylesheet'>
             <style>
-                body { font-family: 'Roboto', sans-serif; padding: 0; margin: 0; text-align: center; overflow: hidden; margin-top: 0px; }
-                .text { color: white; font-size: 24px; font-weight: bold; font-family: 'Roboto', sans-serif; }
-                .flipdown.flipdown__theme-dark .rotor,
-                .flipdown.flipdown__theme-dark .rotor-top,
-                .flipdown.flipdown__theme-dark .rotor-leaf-front,
-                .flipdown.flipdown__theme-dark .rotor-bottom,
-                .flipdown.flipdown__theme-dark .rotor-leaf-rear {
-                    color: #99ff0a !important;
-                    background-color: rgba(0,0,150,0.5) !important;
-                    border-radius: 18px !important;
-                    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-                }
-                .flipdown.flipdown__theme-dark .rotor-group-heading:before {
-                    color: white !important;
-                    text-shadow: 1px 1px 6px #000096, 0 0 2px #99ff0a;
-                }
+                body { font-family: 'Roboto', sans-serif; padding: 0; margin: 0; text-align: center; overflow: hidden; margin-top: 80px; }
+                .text { color: #000096; font-size: 24px; font-weight: bold; font-family: 'Roboto', sans-serif; }
+                .flipdown.flipdown__theme-dark .rotor-group-heading:before { color: #000096; }
                 .days-before::before, .hours-before::before, .minutes-before::before, .seconds-before::before {
                     display: inline-block !important;
                     content: attr(data-before);
                     font-size: 1.9vw;
                     font-weight: 400
                     color: #000096 !important;
+                }
+                .flipdown.flipdown__theme-dark .rotor,
+                .flipdown.flipdown__theme-dark .rotor-top,
+                .flipdown.flipdown__theme-dark .rotor-leaf-front,
+                .flipdown.flipdown__theme-dark .rotor-bottom,
+                .flipdown.flipdown__theme-dark .rotor-leaf-rear {
+                    color: #99ff0a;
+                    background-color: #000096;
                 }
                 .light-theme { color: #99ff0a; }
             </style>
@@ -351,7 +256,7 @@
             </div>
             <input type='hidden' id='js_style' value='flip' />
             <input type='hidden' id='js_language' value='en' />
-            <input type='hidden' id='js_date' value='1750978800' />
+            <input type='hidden' id='js_date' value='1738659600' />
             <input type='hidden' id='js_tz' value='Europe/London' />
             <input type='hidden' id='js_uid' value='1' />
             <script type='text/javascript'>
@@ -375,15 +280,10 @@
       ></iframe>
 
       <!-- Embedded Image from Imgur -->
-      <!-- <div>
+      <div>
         <img src="https://i.imgur.com/pmaqqQGl.jpg" style="width: 100%" />
       </div>
-    </div> -->
-    <br />
-
-    <!-- Shrek Button Centered -->
-    <!-- <button class="shrek-center-button" onclick="toggleShrek()" aria-label="Shrek Easter Egg">🧑</button> -->
-    <br />
+    </div>
 
     <!-- Development Teams Section -->
     <div class="dev-teams">
@@ -393,40 +293,88 @@
       </h3>
       <ul class="dev-list">
         <li>
-          <div class="team-name">🇬🇧 UK Business</div>
+          <div class="team-name">💵 Squad Midas</div>
+          <ul class="team-members">
+            <li>
+              <button class="toggle-button" onclick="toggleShrek()">
+                Hannah Austin
+              </button>
+            </li>
+            <li>Nick Casadei</li>
+            <li>Razvan Bilan</li>
+            <li>Anna Sandru</li>
+            <li>Mihai Comanoiu</li>
+            <li>Aleksandras Gaidamauskas</li>
+            <li>Dan Patrasoiu</li>
+          </ul>
         </li>
         <li>
-          <div class="team-name">🛠️ P&amp;T</div>
+          <div class="team-name">🔥 Squad Hades</div>
+          <ul class="team-members">
+            <li>Daniel Rosa</li>
+            <li>Dominik Murar</li>
+            <li>Cristian Oparlescu</li>
+            <li>Adela Lidia Mot</li>
+            <li>Iacob Sas</li>
+            <li>Andrae Mckenzie</li>
+          </ul>
         </li>
         <li>
-          <div class="team-name">👥 Customer Team</div>
+          <div class="team-name">🗡️ Squad Nemesis</div>
+          <ul class="team-members">
+            <li>Eleanor Barron</li>
+            <li>Dragos Podaru</li>
+            <li>Vineela Thejaswi</li>
+            <li>Denis Chisalita</li>
+            <li>Pinki Singh</li>
+          </ul>
         </li>
         <li>
-          <div class="team-name">📞 Customer Care</div>
+          <div class="team-name">💤 Squad Morpheus</div>
+          <ul class="team-members">
+            <li>Petra Florkova</li>
+            <li>Gabriela Zamescu</li>
+            <li>Lopa Joshi</li>
+            <li>Achraff Boucetta</li>
+            <li>Damian Beles</li>
+            <li>Ekaterina Boydeva</li>
+          </ul>
         </li>
         <li>
-          <div class="team-name">💼 Commercial Team</div>
+          <div class="team-name">🧠 Solution Hub</div>
+          <ul class="team-members">
+            <li>Beng Tan</li>
+            <li>Darshan Venkatesh</li>
+            <li>Maya Bhardwaj</li>
+            <li>Josh Barrows</li>
+            <li>Lewis Dolan</li>
+          </ul>
         </li>
         <li>
-          <div class="team-name">📊 D&amp;A</div>
+          <div class="team-name">📱 Product Team</div>
+          <ul class="team-members">
+            <li>Jessica Head</li>
+            <li>Bouchra El Gziri</li>
+            <li>Jessica Barnes</li>
+          </ul>
         </li>
         <li>
-          <div class="team-name">🖥️ Tech Support</div>
-        </li>
-        <li>
-          <div class="team-name">⚖️ Legal &amp; Privacy</div>
-        </li>
-        <li>
-          <div class="team-name">☁️ Salesforce</div>
-        </li>
-        <li>
-          <div class="team-name">📇 CRM</div>
+          <div class="team-name">🧱 Platform Team</div>
+          <ul class="team-members">
+            <li>Joe Priest</li>
+            <li>Octavian Sirbu</li>
+            <li>Gary Grant</li>
+            <li>Nikolina Radošević</li>
+            <li>Aamir Saeed</li>
+            <li>Aelina Cherian</li>
+            <li>Andrae Ristea</li>
+          </ul>
         </li>
       </ul>
     </div>
 
     <!-- Shrek Fullscreen Overlay -->
-    <!-- <div id="shrekOverlay" class="shrek-overlay">
+    <div id="shrekOverlay" class="shrek-overlay">
       <button class="close-button" onclick="toggleShrek()">✖</button>
       <img
         class="shrek-image"
@@ -444,6 +392,6 @@
           overlay.style.display = "none";
         }
       }
-    </script> -->
+    </script>
   </body>
 </html>
